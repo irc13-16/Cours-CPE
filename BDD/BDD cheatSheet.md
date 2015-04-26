@@ -57,7 +57,7 @@ Merise est une méthode de modélisation. Elle permet de modéliser une base de 
 ### MPD (Modèle Physique des Données) 
 - Transposition du MLDR propre au SGBD utilisé
     - Doit différer selon le SGBD utilisé
-- C’est à ce niveau --ET SEULEMENT A CE NIVEAU-- que l’on va ajouter des règles d’optimisation
+- C’est à ce niveau **ET SEULEMENT A CE NIVEAU** que l’on va ajouter des règles d’optimisation
  
 Quelques règles simples (non exhaustives) :
 - Conservation ou non des tables de référence ?
