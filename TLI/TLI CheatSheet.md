@@ -1,6 +1,6 @@
 TLI CheatSheet
 ==================
-Ce document ne résume pas l'intégralité du cours, seulement les points qui me semble important et/ou oublié.
+Ce document ne résume pas l'intégralité du cours, seulement les points qui me semble important et/ou facilement oublié.
 
 Les base du web
 ---------
