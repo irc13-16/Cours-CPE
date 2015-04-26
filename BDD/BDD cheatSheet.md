@@ -64,11 +64,11 @@ Where Nom='Ciol' AND Prenom='Loic';
 Permet de supprimer une table
 
 ```SQL
-Drop If Exists Personne On Cascade;
+Drop If Exists Personne Cascade;
 ```
 
 - La clause _if exists_ est facultative et permet d'executer le drop uniquement si la table est déja présente
-- La clausese _on cascade_ est facultative et permet de supprimer les table en contraintes externe avant celle-ci afin de ne pas supprimer de lien manquants
+- La clause _cascade_ est facultative et permet de supprimer les table en contraintes externe avant celle-ci afin de ne pas supprimer de lien manquants
 
 ### Requêtes
 #### Simple
