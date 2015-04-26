@@ -113,7 +113,7 @@ _CGI :_ Common Gateway interface. éxécuté par le serveur HTTP _Active Server 
 #PCDATA                  | Contains parsed character data or text                                      | <element (#PCDATA)>
 #PCDATA, element-name    | Contains text and another element; #PCDATA is always listed first in a rule | <element (#PCDATA, child)*>
 , (comma)                | Must use in this order                                                      | <element (child1, child2, child3)>
-                         | (pipe bar)                                                                  | Use only one element of the choices provided | <element (child1 | child2 | child3)>
+'|' | (pipe bar)                                                                  | Use only one element of the choices provided | <element (child1 | child2 | child3)>
 element-name (by itself) | Use one time only                                                           | <element (child)>
 element-name?            | Use either once or not at all                                               | <element (child1, child2?, child3?)>
 element-name+            | Use either once or many times                                               | <element (child1+, child2?, child3)>
