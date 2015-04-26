@@ -159,3 +159,74 @@ Les requêtes groupée permettent de faire des calculs et statistiques en groupa
 #### Synchronisé
 ## Evaluation des requêtes
 ## Administration d'une base de données
+
+Pour se connecter à une BDD, il faut :
+- Etre reconnu (utilisateur)
+- Avoir des droits (rôle)
+
+#### Utilisateurs
+2 types de compte :
+- Comptes de type DBA (administrateur de bases de données) (<=> compte système) qui ont le droit de tout faire dans la base
+- Comptes utilisateurs qui n’auront pas le droit de tout faire… Leurs droits vont dépendre de ce qu’on leur donne le droit de faire. 
+
+Création d'un utilisateur : 
+```SQL
+CREATE USER nom_util PASSWORD 'toto'; -- syntaxe normalisée, attention aux quotes!
+```
+
+Modification d'un utilisateur : 
+```SQL
+ALTER USER nom_util IDENTIFIED BY nouveau_mot_passe
+QUOTA UNLIMITED ON TOOLS ACCOUNT UNLOCK; 
+```
+
+#### Rôle
+Pour grouper les utilisateurs pour faciliter la gestion des droits :
+les droits peuvent être donnés ou supprimés pour tout un groupe.
+Etapes :
+- Création d’un rôle représentant le groupe
+- On donne des droits au rôle (groupe)
+- « Ajout » des utilisateurs membres de ce groupe.
+
+On peut aussi donner un rôle à une autre rôle. 
+- Il s’agit dans ce cas de sous-groupes que l’on inclut dans un groupe plus large.
+
+##### Création d'un rôle :
+```SQL
+CREATE ROLE irc NOLOGIN; -- syntaxe PostgreSQL non normalisée 
+```
+
+##### Donner des droits :
+```SQL
+GRANT SELECT ON Personne TO irc;
+```
+
+##### Revoquer des droits :
+```SQL
+GRANT SELECT ON Personne FROM irc; --utilisation de FROM et non de TO
+```
+##### « Ajouter » un utilisateur à un rôle
+```SQL
+GRANT irc TO mon_utilisateur
+```
+
+##### Syntaxe :
+
+```SQL
+      ┌       
+      │all                    ┌
+      │select   ┌             |view     ┌     ┌ 
+      │Insert   |(colonne)    |table    |to   |utilisateur
+GRANT │update   └         on  |…        |from |rôle
+REVOKE│delete                 |function └     └  
+      │execute                └
+      │…        
+      └
+```
+
+
+Explications :
+- ALL ou all privileges 
+- On peut accorder ou supprimer des droits à tout utilisateur ou rôle référencé.
+- L'objet est le nom d'une table, vue, fonction,….
+- La commande grant/revoke ne peut être exécutée que par l’administrateur de l'objet (grant option) ou un compte DBA. 
