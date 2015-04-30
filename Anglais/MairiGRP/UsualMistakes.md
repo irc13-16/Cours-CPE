@@ -24,7 +24,7 @@
 - ~~we~~ **there** are around 60 **of us**
 - see in a single look **At first glance**
 - (~~do~~/**make**) improvements
-- explain me / **explain to me/ explain**
+- ~~explain me~~ / **explain to me/ explain**
 - you ~~have~~ to know _(aggressive !!)_ / **you might like to know**
 - Servers ~~has~~/**have** to
 - a ~~way~~ **means** of communications
