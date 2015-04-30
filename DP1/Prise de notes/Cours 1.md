@@ -67,7 +67,7 @@ public class MeteoUpdate implements Observer {
 }
 ```
 
-On peut faire transiter un tableau d'arguments si on veut en faire passer plusieurs
+On peut faire transiter un tableau d'arguments si on veut en faire passer plusieurs.
 
 ### Questions
 1. observer des données
