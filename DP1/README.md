@@ -2,7 +2,7 @@
 
 ## Résumé sur les design pattern:
 
-La cheat sheet: [cheat sheet irc design pattern](DP1/cheatsheet.md)
+La cheat sheet: [cheat sheet irc design pattern](cheatsheet.md)
 
 
 ## Prise de notes:
