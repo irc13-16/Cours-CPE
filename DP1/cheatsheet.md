@@ -11,12 +11,14 @@ On va voir ici les différents design pattern avec une brève description et le 
 
 **Exemple**:
 Dans cette exemple on veut qu'un livre électronique (`EBookInterface`) puisse devenir un livre papier pour ça il nous faut un adapteur qui implémente l'interface `PaperBookInterface` et qui encapsule une implémentation de `EBookInterface` (ex: `Kindle`). Les méthodes `open` et `turnPage` dans le `EBookAdapter` appelleront respectivement les méthodes `pressStart` et `pressNext` de l'objet encapsulé.
+
 ![adapter exemple](https://rawgit.com/domnikl/DesignPatternsPHP/master/Structural/Adapter/uml/uml.png)
 
 ### Bridge (pas essentiel)
 **Description**: Sert à découpler une abstraction de son implémentation. (Principe du polymorphisme basique)
 
 **Exemple**: Deux implémentations possible, en implémentant une interface ou en héritant d'une classe abstraite (**Notez** le logo de l'image d'une classe abstraite sur le schéma)
+
 ![Bridge exemple](https://rawgit.com/domnikl/DesignPatternsPHP/master/Structural/Bridge/uml/uml.png)
 
 ### Composite
@@ -24,6 +26,7 @@ Dans cette exemple on veut qu'un livre électronique (`EBookInterface`) puisse d
 On peut voir ce pattern comme un arbre de même composant.
 
 **Exemple**: On veut créer un système de formulaire qui va donc contenir des champs pour ça on va donc faire une classe abstraite `FormElement`. Il nous faudra aussi le cadre sur lequel on va mettre des éléments ici ce sera `Form` qui va pouvoir avoir d'autre `FormElement` (Ce serait la branche dans un arbre). Enfin, on va faire des champs en plus qui seront contenu dans le `Form` ici ça sera un champ text (`TextElement`) et champ input (`InputElement`), c'est deux derniers éléments pourront être vue comme des feuilles de l'arbre.
+
 ![Composite exemple](https://rawgit.com/domnikl/DesignPatternsPHP/master/Structural/Composite/uml/uml.png)
 
 ### Decorator
