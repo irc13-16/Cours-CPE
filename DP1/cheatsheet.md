@@ -44,4 +44,4 @@ On va faire deux décorateurs qui vont hérité d'une classe abstraite (`Decorat
  - http://abrillant.developpez.com/tutoriel/java/design/pattern/introduction
  - Wikipédia
  - https://github.com/domnikl/DesignPatternsPHP (pour avoir les diagrammes UML jolie et clair)
- - Mon cerveau :p (@ArthurHlt)
+ - Mon cerveau :p ([@ArthurHlt](https://github.com/ArthurHlt))
