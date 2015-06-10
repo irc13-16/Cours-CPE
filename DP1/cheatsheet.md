@@ -6,7 +6,7 @@ Il existe différent types de design pattern: les modèles structurels, les mod�
 - L'abstraction
 - l'encapsulation
 - l'héritage
-- l'encapsulation
+- le polymorphisme
 
 Un programme bien concu est un programme souple, extensible et facile à maintenir :
 
