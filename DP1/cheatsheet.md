@@ -10,6 +10,9 @@ Il existe différent types de design pattern: les modèles structurels, les mod�
 
 Un programme bien concu est un programme souple, extensible et facile à maintenir :
 
+**Programmez des interfaces, non des implémentations**
+Si vous programmez avec des bonnes interfaces votre code sera beaucoup plus robuste aux changements et vous pourrez utiliser certaines fonctionnalités communes efficacement. L'exemple le plus parlant est sans doute l'itérateur Java pour parcourir une collection. Pas besoin de connaitre la structure interne d'une collection parmi les nombreuses existantes pour naviguer sur les éléments qui la constitue, il suffit d'utiliser l'interface Iterator. Vous pouvez donc parcourir une liste chaînée, un tableau dynamique, une structure en arbre ou je ne sais quoi de la même manière. Avouez que c'est vraiment utile.
+
 **Concept de forte cohésion - faible couplage**
 
 ### Couplage et cohésion
