@@ -343,3 +343,7 @@ public class MailHandlerServlet extends HttpServlet {
  }
 }
 ```
+
+# Auteur
+- ([@Aveys](https://github.com/Aveys))
+- et bientôt vous ;)

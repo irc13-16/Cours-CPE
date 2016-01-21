@@ -53,3 +53,7 @@ L'algorithme MapReduce s'effectue en deux temps :
 - Reduce : regroupe les données et les traiter
 
 #Amazon Web services **IMPORTANT** : Je considére que cette partie n'est pas interessante et ne sera pas dans le DS. A voir si quelqu'un à le courage de le faire.
+
+# Auteur
+- ([@Aveys](https://github.com/Aveys))
+- et bientôt vous ;)
