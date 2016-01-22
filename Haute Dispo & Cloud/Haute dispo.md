@@ -35,7 +35,13 @@ Temps Moyen entre défaillance MTBF = Moy(Ai+Bi) BI -> temps de réparation
 - Disponibilité = MTTF/(MTTF+MTTR)
 - Indisponibilité = 1 - Disponibilité
 - Eviter les SPOF (Single Point of Failure)
-- Faire de la redondances et mettre des modules d'attente aux fautes
+- Faire de la redondances et mettre des modules d'attentes aux fautes (redondances)
+
+### redondances
+**Trois types de redondances :**
+- **Passive :** recours au masquage de faute de façon automatique
+- **Active :** Une detection de faute est mise en place et une faute entraine une demande de correction. Passage automatique sur module de secours
+- **Hybride :** Mélange des deux solutions du dessus
 
 ## Elements de calcul
 - Fiabilité = R
