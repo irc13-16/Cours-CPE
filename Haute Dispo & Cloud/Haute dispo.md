@@ -1,7 +1,12 @@
 # Haute disponibilité
-La sureté de fonctionnement c'est prévois les événements dangeureux et evaluer/réduire les occurences et les dommages de ces événements.
+La sureté de fonctionnement c'est prévoir les événements dangeureux et evaluer/réduire les occurences et les dommages de ces événements.
 
-Une faute est suceptible d'entrainer une défaillance et d'introduire une erreur dans le systéme.
+
+La fiabilité est la probabilité pour qu'une entité puisse accomplir une fonction requise, pour des conditions données, pendant un interval de temps donné.
+
+On parle de défailance lorsqu'un système ne respecte plus les fonctions attendues.
+
+Une faute est suceptible d'entrainer une défaillance et d'introduire une erreur dans le système.
 - **Fiabilité**: Mesure du Fonctionnement correct du systéme
 - **Sûreté**: Quoi qu'il arrive, rien de grave ne se passera
 - **Disponibilité**: Mesure du temps de fonctionnement
