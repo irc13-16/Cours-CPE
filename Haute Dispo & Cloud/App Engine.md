@@ -80,9 +80,9 @@ q.setFilter(heightRangeFilter);
 // Récupération du résultat de la requète à l’aide de PreparedQuery
 PreparedQuery pq = datastore.prepare(q);
 for (Entity result : pq.asIterable()) {
- String firstName = (String) result.getProperty("firstName");
- String lastName = (String) result.getProperty("lastName");
- Long height = (Long) result.getProperty("height");
+    String firstName = (String) result.getProperty("firstName");
+    String lastName = (String) result.getProperty("lastName");
+    Long height = (Long) result.getProperty("height");
 }
 ```
 
@@ -100,16 +100,16 @@ C'est un stockage temporaire de clé/valeur trés rapide car stocké directement
  props.put(GCacheFactory.EXPIRATION_DELTA, 3600);
  props.put(MemcacheService.SetPolicy.ADD_ONLY_IF_NOT_PRESENT, true);
  try {
- // Récupération du Cache
- CacheFactory cacheFactory = CacheManager.getInstance().getCacheFactory();
- // création/récupération du cache suivant des propriétés spécifiques
- cache = cacheFactory.createCache(props);
+     // Récupération du Cache
+     CacheFactory cacheFactory = CacheManager.getInstance().getCacheFactory();
+     // création/récupération du cache suivant des propriétés spécifiques
+     cache = cacheFactory.createCache(props);
 
- // Si aucune propriété n'est spécifiée,
- //créer/récupérer un cache comme ci-dessous
- //cache = cacheFactory.createCache(Collections.emptyMap());
+     // Si aucune propriété n'est spécifiée,
+     //créer/récupérer un cache comme ci-dessous
+     //cache = cacheFactory.createCache(Collections.emptyMap());
  } catch (CacheException e) {
- // Traitement en cas d'erreur sur la récupération/configuration du cache
+     // Traitement en cas d'erreur sur la récupération/configuration du cache
  }
  String key="objKey1"; // Définir la clé de la valeur à stocker
  String value="myValue1" // Définir l'objet à stocker
@@ -182,15 +182,15 @@ On doit ensuite planifier la tache à l'aide du fichier cron.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <cronentries>
  <cron>
- <url>/recache</url>
- <description>Repopulate the cache every minutes</description>
- <schedule>every 2 minutes</schedule>
+     <url>/recache</url>
+     <description>Repopulate the cache every minutes</description>
+     <schedule>every 2 minutes</schedule>
  </cron>
  <cron>
- <url>/weeklyreport</url>
- <description>Mail out a weekly report</description>
- <schedule>every monday 08:30</schedule>
- <timezone>America/New_York</timezone>
+     <url>/weeklyreport</url>
+     <description>Mail out a weekly report</description>
+     <schedule>every monday 08:30</schedule>
+     <timezone>America/New_York</timezone>
  </cron>
 </cronentries>
 ```
@@ -200,12 +200,12 @@ Et pour finir on ajoute la sécurisation des URL des Tasks dans le web.xml
 ```XML
 <security-constraint>
  <web-resource-collection>
- <url-pattern>/tasks/*</url-pattern>
+     <url-pattern>/tasks/*</url-pattern>
  </web-resource-collection>
  <auth-constraint>
- <role-name>admin</role-name>
+     <role-name>admin</role-name>
  </auth-constraint>
- </security-constraint>
+</security-constraint>
 ```
 
 ## Service Channel
@@ -245,14 +245,14 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 // …
  try {
- URL url = new URL("http://www.example.com/atom.xml");
-BufferedReader reader = new BufferedReader(new
-InputStreamReader(url.openStream()));
- String line;
- while ((line = reader.readLine()) != null) {
- // Traitement des données reçues
- }
- reader.close();
+     URL url = new URL("http://www.example.com/atom.xml");
+     BufferedReader reader = new BufferedReader(new
+     InputStreamReader(url.openStream()));
+     String line;
+     while ((line = reader.readLine()) != null) {
+         // Traitement des données reçues
+     }
+    reader.close();
  } catch (MalformedURLException e) {
  // Gestion d’exceptions d’ouverture de flux
  } catch (IOException e) {
@@ -274,22 +274,21 @@ Ce service permet d'automatiser l'envoi et la reception de message avec l'extér
 
 ```Java
 public class UserMailSender extends HttpServlet{
-private static final long serialVersionUID = 1L;
-@Override
-protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-throws ServletException, IOException {
- Properties props = new Properties();
- Session session = Session.getDefaultInstance(props, null);
- String msgBody = "YO! Welcome to the JavaMail Service provided by Google App Engine !";
- try {
- Message msg = new MimeMessage(session);
- msg.setFrom(new InternetAddress("app@yahoo.fr", "Example.com","Admin"));
- msg.addRecipient(Message.RecipientType.TO,new InternetAddress("jDoe@cpe.fr", "Mr. User"));
- msg.setSubject("Your Example.com account has been activated");
- msg.setText(msgBody);
- Transport.send(msg);
- } catch (AddressException e) {e.printStackTrace();
- } catch (MessagingException e) {e.printStackTrace(); }
+    private static final long serialVersionUID = 1L;
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+            Properties props = new Properties();
+            Session session = Session.getDefaultInstance(props, null);
+            String msgBody = "YO! Welcome to the JavaMail Service provided by Google App Engine !";
+            try {
+                Message msg = new MimeMessage(session);
+                msg.setFrom(new InternetAddress("app@yahoo.fr", "Example.com","Admin"));
+                msg.addRecipient(Message.RecipientType.TO,new InternetAddress("jDoe@cpe.fr", "Mr. User"));
+                msg.setSubject("Your Example.com account has been activated");
+                msg.setText(msgBody);
+                Transport.send(msg);
+            } catch (AddressException e) {e.printStackTrace();
+            } catch (MessagingException e) {e.printStackTrace(); }
 }
  }
 ```

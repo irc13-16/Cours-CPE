@@ -29,7 +29,7 @@ Une faute est suceptible d'entrainer une défaillance et d'introduire une erreur
 
 Temps Moyen avant défaillance MTTF (Mean Time To Failure): MTTF = Moy(Ai) Ai -> Intervalle de fonctionnement
 
-Temps Moyen entre défaillance MTTR = Moy(Ai+Bi) BI -> temps de réparation
+Temps Moyen pour réparation MTTR = Moy(Bi) BI -> temps de réparation
 
 Temps Moyen entre défaillance MTBF = Moy(Ai+Bi) BI -> temps de réparation
 - Disponibilité = MTTF/(MTTF+MTTR)
